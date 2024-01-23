@@ -1,0 +1,22 @@
+/* Element Selectors */
+body { background-color: rgb(207, 175, 128); font-family: Times, TimesNR, Georgia, serif; padding-top: 15em; border: solid;}
+
+h1 { text-transform: uppercase; font-weight: normal; font-size: large; letter-spacing: 0.8em; }
+h2 { font-variant: small-caps; letter-spacing: 0.4em; }
+h1, h2, h3 { text-align: center; }
+strong { text-transform: uppercase; font-weight: inherit; }
+
+/* Class Selectors */
+.USA { text-transform: none; font-variant: small-caps; display: block; font-size: x-large; letter-spacing: 0.3em; margin-top: 1em; }
+.signer { font-style: italic; }
+.imagePreceding { float: left; width: 25%; margin: 0 1em 1em 0; }
+.imageStandard { display: block; width: 50%; margin: 1em 25%; }
+.imageFixed { position: fixed; width: 25%; top: 1em; right: 1em; }
+.noFill { clear: both; }
+
+/* ID Selectors */
+#declaration { font-size: x-large; letter-spacing: 1.2em; display: block; margin: 1em 0; }
+#headerFixed { position: fixed; width: 100%; background-color: rgb(207, 175, 128); top: -10px; }
+
+/* Combination Selectors */
+ul.abuse { list-style: none; text-indent: 1em; }

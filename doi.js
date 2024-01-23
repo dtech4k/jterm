@@ -1,0 +1,1 @@
+var signerOpenTag = '<span class="signer">', signerCloseTag = '</span>', signer = 'Samuel Adams';
