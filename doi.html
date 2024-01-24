@@ -7,6 +7,9 @@
         <meta name="author" content="Thomas Jefferson" />
         <meta name="date" content="July 4, 1776" />
 		<script type="text/JavaScript" src="doi.js"></script>
+		<script type="text/JavaScript" src="doiabuses.js"></script>
+		<script type="text/JavaScript" src="doisigners.js"></script>
+
     </head>
     <body>
     	<!-- This is an HTML comment. -->
@@ -20,34 +23,73 @@
 
 		<p>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness,—That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, —That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.—Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.</p>
 
-		<ul class=abuse>
-			 <li>He has refused his Assent to Laws,
-				 the most wholesome and necessary for the public good.</li>
-			 <li>He has forbidden his Governors to pass Laws of immediate and pressing importance,
-				 unless suspended in their operation till his Assent should be obtained;
-				 and when so suspended, he has utterly neglected to attend to them.</li>
-			<li>He has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only.</li>
+		
+		<ul class="abuse">
+			<script>
+				for (a = 0; a < abuses.length; a++)
+					if (typeof abuses[a] == 'string')
+						document.write('<li>' + abuses[a] +'</li>');
+					else
+						if (abuses[a].length)  // if not an array, .length is undefined, which is converted to false
+						{
+							document.write('<ul class="abuse">');
+							for (b = 0, abuses2 = abuses[a]; b < abuses2.length; b++)
+								document.write('<li>' + abuses2[b] +'</li>');
+							document.write('</ul>');
+						}
+						// else skip this item
+			</script>
 		</ul>
-
-		He has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their public Records, for the sole purpose of fatiguing them into compliance with his measures. He has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people. He has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within. He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands. He has obstructed the Administration of Justice, by refusing his Assent to Laws for establishing Judiciary powers. He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries. He has erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance. He has kept among us, in times of peace, Standing Armies without the Consent of our legislatures. He has affected to render the Military independent of and superior to the Civil power. He has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation: For Quartering large bodies of armed troops among us: For protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of these States: For cutting off our Trade with all parts of the world: For imposing Taxes on us without our Consent: For depriving us in many cases, of the benefits of Trial by Jury: For transporting us beyond Seas to be tried for pretended offences For abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies: For taking away our Charters, abolishing our most valuable Laws, and altering fundamentally the Forms of our Governments: For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever. He has abdicated Government here, by declaring us out of his Protection and waging War against us. He has plundered our seas, ravaged our Coasts, burnt our towns, and destroyed the lives of our people. He is at this time transporting large Armies of foreign Mercenaries to compleat the works of death, desolation and tyranny, already begun with circumstances of Cruelty & perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head of a civilized nation. He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands. He has excited domestic insurrections amongst us, and has endeavoured to bring on the inhabitants of our frontiers, the merciless Indian Savages, whose known rule of warfare, is an undistinguished destruction of all ages, sexes and conditions. In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people. Nor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends. We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor. John Hancock. Georgia: Button Gwinnett, Lyman Hall, George Walton. North Carolina: William Hooper, Joseph Hewes, John Penn. South Carolina: Edward Rutledge, Thomas Heyward, Jr., Thomas Lynch, Jr., Arthur Middleton. Maryland: Samuel Chase, William Paca, Thomas Stone, Charles Carrol,l of Carrollton. Virginia: George Wythe, Richard Henry Lee, Thomas Jefferson, Benjamin Harrison, Thomas Nelson, Jr., Francis Lightfoot Lee, Carter Braxton. Pennsylvania: Robert Morris, Benjamin Rush, Benjamin Franklin, John Morton, George Clymer, James Smith, George Taylor, James Wilson, George Ross. Delaware: Caesar Rodney, George Read, Thomas McKean. New York: William Floyd, Philip Livingston, Francis Lewis, Lewis Morris. New Jersey: Richard Stockton, John Witherspoon, Francis Hopkinson, John Hart, Abraham Clark. New Hampshire: Josiah Bartlett, William Whipple. 
 		<table>
-			 <tbody>
-				  <tr><td rowspan=4>Massachusetts</td><td>
-				<script type="text/JavaScript">
-					document.write(signerOpenTag + signer + signerCloseTag);
-				</script>
-				</td></tr>
-				  <tr>                                   <td class=signer>John Adams</td>         </tr>
-				  <tr>                                   <td class=signer>Robert Treat Paine</td> </tr>
-				  <tr>                                   <td class=signer>Elbridge Gerry.</td>    </tr>
-				  <tr> <td rowspan=2>Rhode Island</td>   <td class=signer>Stephen Hopkins</td>    </tr>
-				  <tr>                                   <td class=signer>William Ellery</td>     </tr>
-				  <tr> <td rowspan=4>Connecticut</td>  <td class=signer>Roger Sherman</td>       </tr>
-				  <tr>                                   <td class=signer>Samuel Huntington</td>         </tr>
-				  <tr>                                   <td class=signer>William Williams</td> </tr>
-				  <tr>                                   <td class=signer>Oliver Wolcott.</td>    </tr>
-				  <tr> <td>New Hampshire</td>   <td class=signer>Matthew Thornton</td>    </tr>
-			 </tbody>
+			<tbody>
+				<script>
+				for (s = 0; s < signers.length; s++){
+					stateName = signers[s][0]
+					names = signers[s][1]
+					document.write("<tr><td rowspan=" + names.length + ">" + stateName + "</td><td class=signer>" + names[0] + "</td></tr>")
+					for(t = 1; t < signers[s][1].length; t++){
+						document.write("<tr><td class=signer>" + names[t] + "</td></tr>")
+					}
+				}
+			</script>
+	</tbody>
+	</table>
+		<table id="signers">
+			<tbody class=signerGroup></tbody>
+		</table>
+				<script>
+					/*table = $('#signers')
+					for (state=0; state<signers.length; state++){
+						//state is an array ["statename", [signer0, signer 1, ...]]
+						stateName=signers[state][0]
+						names=signers[state][1]
+						switch(state)
+						{
+							case 0:
+							case 4:
+							case 6:
+							case 10:
+								tbody = table.append('<tbody>').eq(0).attr('class', 'signerGroup')
+							//document.write('<tbody class=signerGroup></tbody>')
+						}
+						tr = tbody.append('tr')
+						tr.append('td')
+							.attr('class', 'tdState')
+							.attr('rowspan', 'names.length')
+							.text(stateName)
+						tr.append('td')
+							.attr('class', 'signer')
+							.text(names[0])
+						//document.write('tr style="border-top-spacing: 3em;"><td class=tdState rowspan=' + names.length + ',</td><td class=signer>' +names[name] + '</td></tr>')
+						for(name=1; name<names.length;name++)
+							tr = tbody.append('tr')
+							tr.append('td')
+								.attr('class', 'signer')
+								.text(names[name])
+							//document.write('<tr><td class=signer>' + names[name] + '</td></tr>')
+					}*/
+					</script>
+				</tbody>
 		</table>
 
 		<h4>In Congress, January 18, 1777.</h4> 
@@ -75,5 +117,101 @@
 
 		<hr />
 		<p>Baltimore, in Maryland: Printed by Mary Katharine Goddard.</p>
+
+		<svg width="440" height="250">    
+			<g id="USFlag" transform="translate(20, 20)">
+				<!-- Stripe Template, each one 16 pixels high, second Q chosen for equal slope: <path class="Stripe" 
+						d="M 0 y Q 79 (y + 25) 158 y Q 276 (y - 37) 395 0 L 395 (y + 16) Q 276 (y + 16 - 37) 158 (y + 16) Q 79 (y + 16 + 25) 0 (y + 16) Z" /> -->
+				<!-- <rect class="RedStripe" x="158" y="0" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 0 Q 79 25 158 0 Q 276 -37 395 0 L 395 16 Q 276 -21 158 16 Q 79 41 0 16 Z"></path>
+				<!-- <rect class="WhiteStripe" x="158" y="16" width="237" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 16 Q 79 41 158 16 Q 276 -21 395 16 L 395 32 Q 276 -5 158 32 Q 79 57 0 32 Z"></path>
+				<!-- <rect class="RedStripe" x="158" y="32" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 32 Q 79 57 158 32 Q 276 -5 395 32 L 395 48 Q 276 11 158 48 Q 79 73 0 48 Z"></path>
+				<!-- <rect class="WhiteStripe" x="158" y="48" width="237" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 48 Q 79 73 158 48 Q 276 11 395 48 L 395 64 Q 276 27 158 64 Q 79 89 0 64 Z"></path>
+				<!-- <rect class="RedStripe" x="158" y="64" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 64 Q 79 89 158 64 Q 276 27 395 64 L 395 80 Q 276 43 158 80 Q 79 105 0 80 Z"></path>
+				<!-- <rect class="WhiteStripe" x="158" y="80" width="237" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 80 Q 79 105 158 80 Q 276 43 395 80 L 395 96 Q 276 59 158 96 Q 79 121 0 96 Z"></path>
+				<!-- <rect class="RedStripe" x="158" y="96" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 96 Q 79 121 158 96 Q 276 59 395 96 L 395 112 Q 276 75 158 112 Q 79 137 0 112 Z"></path>
+				<!-- <rect class="WhiteStripe" x="0" y="112" width="395" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 112 Q 79 137 158 112 Q 276 75 395 112 L 395 128 Q 276 91 158 128 Q 79 153 0 128 Z"></path>
+				<!-- <rect class="RedStripe" x="0" y="128" width="395" height="16" /> -->
+				<path class="RedStripe" d="M 0 128 Q 79 153 158 128 Q 276 91 395 128 L 395 144 Q 276 107 158 144 Q 79 169 0 144 Z"></path>
+				<!-- <rect class="WhiteStripe" x="0" y="144" width="395" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 144 Q 79 169 158 144 Q 276 107 395 144 L 395 160 Q 276 123 158 160 Q 79 185 0 160 Z"></path>
+				<!-- <rect class="RedStripe" x="0" y="160" width="395" height="16" /> -->
+				<path class="RedStripe" d="M 0 160 Q 79 185 158 160 Q 276 123 395 160 L 395 176 Q 276 139 158 176 Q 79 201 0 176 Z"></path>
+				<!-- <rect class="WhiteStripe" x="0" y="176" width="395" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 176 Q 79 201 197 176 Q 276 139 395 176 L 395 192 Q 276 155 158 192 Q 79 217 0 192 Z"></path>
+				<!-- <rect class="RedStripe" x="0" y="192" width="395" height="16" /> -->
+				<path class="RedStripe" d="M 0 192 Q 79 217 158 192 Q 276 155 395 192 L 395 208 Q 276 171 158 208 Q 79 233 0 208 Z"></path>
+				<!--<rect id="Union" x="0" y="0" width="158" height="112" />-->
+				<path id="Union" d="M 0 0 Q 79 25 158 0 L 158 112 Q 79 137 0 112 Z"></path>
+				<!-- <rect id="Outline" x="0" y="0" width="395" height="208" /> -->
+				<path id="Outline" d="M 0 0 Q 79 25 158 0 Q 276 -37 395 0 L 395 208 Q 276 171 158 208 Q 79 233 0 208 Z"></path>
+				<text class="Stars" x="73" y="30">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(27.69230769, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(55.38461538, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(83.07692308, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(110.7692308, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(138.4615385, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(166.1538462, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(193.8461538, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(221.5384615, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(249.2307692, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(276.9230769, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(304.6153846, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(332.3076923, 79, 68)">★</text>
+			</g>
+		<g id="USFlag" transform="translate(20, 20)">
+				<!-- Stripe Template, each one 16 pixels high, second Q chosen for equal slope: <path class="Stripe" 
+						d="M 0 y Q 79 (y + 25) 158 y Q 276 (y - 37) 395 0 L 395 (y + 16) Q 276 (y + 16 - 37) 158 (y + 16) Q 79 (y + 16 + 25) 0 (y + 16) Z" /> -->
+				<!-- <rect class="RedStripe" x="158" y="0" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 0 Q 79 25 158 0 Q 276 -37 395 0 L 395 16 Q 276 -21 158 16 Q 79 41 0 16 Z"></path>
+				<!-- <rect class="WhiteStripe" x="158" y="16" width="237" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 16 Q 79 41 158 16 Q 276 -21 395 16 L 395 32 Q 276 -5 158 32 Q 79 57 0 32 Z"></path>
+				<!-- <rect class="RedStripe" x="158" y="32" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 32 Q 79 57 158 32 Q 276 -5 395 32 L 395 48 Q 276 11 158 48 Q 79 73 0 48 Z"></path>
+				<!-- <rect class="WhiteStripe" x="158" y="48" width="237" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 48 Q 79 73 158 48 Q 276 11 395 48 L 395 64 Q 276 27 158 64 Q 79 89 0 64 Z"></path>
+				<!-- <rect class="RedStripe" x="158" y="64" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 64 Q 79 89 158 64 Q 276 27 395 64 L 395 80 Q 276 43 158 80 Q 79 105 0 80 Z"></path>
+				<!-- <rect class="WhiteStripe" x="158" y="80" width="237" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 80 Q 79 105 158 80 Q 276 43 395 80 L 395 96 Q 276 59 158 96 Q 79 121 0 96 Z"></path>
+				<!-- <rect class="RedStripe" x="158" y="96" width="237" height="16" /> -->
+				<path class="RedStripe" d="M 0 96 Q 79 121 158 96 Q 276 59 395 96 L 395 112 Q 276 75 158 112 Q 79 137 0 112 Z"></path>
+				<!-- <rect class="WhiteStripe" x="0" y="112" width="395" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 112 Q 79 137 158 112 Q 276 75 395 112 L 395 128 Q 276 91 158 128 Q 79 153 0 128 Z"></path>
+				<!-- <rect class="RedStripe" x="0" y="128" width="395" height="16" /> -->
+				<path class="RedStripe" d="M 0 128 Q 79 153 158 128 Q 276 91 395 128 L 395 144 Q 276 107 158 144 Q 79 169 0 144 Z"></path>
+				<!-- <rect class="WhiteStripe" x="0" y="144" width="395" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 144 Q 79 169 158 144 Q 276 107 395 144 L 395 160 Q 276 123 158 160 Q 79 185 0 160 Z"></path>
+				<!-- <rect class="RedStripe" x="0" y="160" width="395" height="16" /> -->
+				<path class="RedStripe" d="M 0 160 Q 79 185 158 160 Q 276 123 395 160 L 395 176 Q 276 139 158 176 Q 79 201 0 176 Z"></path>
+				<!-- <rect class="WhiteStripe" x="0" y="176" width="395" height="16" /> -->
+				<path class="WhiteStripe" d="M 0 176 Q 79 201 197 176 Q 276 139 395 176 L 395 192 Q 276 155 158 192 Q 79 217 0 192 Z"></path>
+				<!-- <rect class="RedStripe" x="0" y="192" width="395" height="16" /> -->
+				<path class="RedStripe" d="M 0 192 Q 79 217 158 192 Q 276 155 395 192 L 395 208 Q 276 171 158 208 Q 79 233 0 208 Z"></path>
+				<!--<rect id="Union" x="0" y="0" width="158" height="112" />-->
+				<path id="Union" d="M 0 0 Q 79 25 158 0 L 158 112 Q 79 137 0 112 Z"></path>
+				<!-- <rect id="Outline" x="0" y="0" width="395" height="208" /> -->
+				<path id="Outline" d="M 0 0 Q 79 25 158 0 Q 276 -37 395 0 L 395 208 Q 276 171 158 208 Q 79 233 0 208 Z"></path>
+				<text class="Stars" x="73" y="30">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(27.69230769, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(55.38461538, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(83.07692308, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(110.7692308, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(138.4615385, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(166.1538462, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(193.8461538, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(221.5384615, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(249.2307692, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(276.9230769, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(304.6153846, 79, 68)">★</text>
+				<text class="Stars" x="73" y="30" transform="rotate(332.3076923, 79, 68)">★</text>
+			</g></svg>
 	</body>
 </html>
