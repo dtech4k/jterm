@@ -5,9 +5,9 @@ h1 { text-transform: uppercase; font-weight: normal; font-size: large; letter-sp
 h2 { font-variant: small-caps; letter-spacing: 0.4em; }
 h1, h2, h3 { text-align: center; }
 strong { text-transform: uppercase; font-weight: inherit; }
-table{width: 100%; margine: 1em 0; border-left: solid;}
+table{width: 100%; margin: 1em 0; border-left: solid;}
 td {padding: 0.5em;}
-
+input {margin: 1em 0;}
 /* Class Selectors */
 .USA { text-transform: none; font-variant: small-caps; display: block; font-size: x-large; letter-spacing: 0.3em; margin-top: 1em; }
 .signer { font-style: italic; }
@@ -28,3 +28,9 @@ td {padding: 0.5em;}
 
 /* Combination Selectors */
 ul.abuse { list-style: none; text-indent: 1em; }
+
+/*pseudoClass Selectors */
+a { color: #2659BF; }   /* blue, underlined by default */
+a:hover { color: #00F; text-decoration: none; }   /* bright blue, no underline */
+a:active { color: #99F; text-decoration: none; }   /* whitish blue, no underline */
+a:visited { color: #666; }   /* medium gray, underlined by default */

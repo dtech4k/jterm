@@ -7,9 +7,11 @@
         <meta name="author" content="Thomas Jefferson" />
         <meta name="date" content="July 4, 1776" />
 		<script type="text/JavaScript" src="doi.js"></script>
+		<script type="text/JavaScript" src=js/doi.js></script>
 		<script type="text/JavaScript" src="doiabuses.js"></script>
 		<script type="text/JavaScript" src="doisigners.js"></script>
-
+		<script type="sigImg" src="john_hancock_signature.jpg"></script>
+		
     </head>
     <body>
     	<!-- This is an HTML comment. -->
@@ -19,12 +21,47 @@
 			<h1>the unanimous <span id=declaration>declaration</span> of the<br/> <span class=USA>Thirteen United States of <strong>America</strong></span>.</h1>
 		</div>
 
-		<p>When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.</p>
-
-		<p>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness,—That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, —That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.—Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.</p>
-
+		<p onmouseover="this.setAttribute('style', 'font-size: 150%')"
+		onmouseout="this.removeAttribute('style')">When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.</p>
+		<p>
+			<label>
+				Increase Text Size:
+				<input type="button" value="+" onclick="magnifyText('#truths')" />
+			</label>
+			<label>
+				Decrease Text Size:
+				<input type="button" value="–" onclick="shrinkText('#truths')" />
+			</label>
+		</p>
 		
-		<ul class="abuse">
+		<p id="truths">
+			<script>
+				function magnifyText(selection)
+				{
+					var element = $(selection);
+					if (element.css('font-size') == '')
+						element.css('font-size', '120%');
+					else
+						element.css('font-size', parseInt(element.css('font-size')) * 1.20);
+				}
+				function shrinkText(selection)
+				{
+					var element = $(selection);
+					if (element.css('font-size') == '')
+						element.css('font-size', '83%');
+					else
+						element.css('font-size', parseInt(element.css('font-size')) * 0.833);
+				}
+			</script>
+		We hold these truths to be self-evident, that all men are created equal,
+		that they are endowed by their Creator with certain unalienable Rights,
+		that among these are Life, Liberty and the pursuit of Happiness.
+   		</p>
+		
+		    <label>
+				<input type="checkbox" checked onchange="toggleAbuses(this)" /> Show Abuses
+			</label>
+		<ul id=abuses; class="abuse">
 			<script>
 				for (a = 0; a < abuses.length; a++)
 					if (typeof abuses[a] == 'string')
@@ -98,14 +135,20 @@
 		<p><em>Ordered</em>,<br/>
 		<strong>That</strong> an authenticated Copy of the <strong>Declaration</strong> of <strong>Independency</strong>, with the Names of the <strong>Members</strong> of <strong>Congress</strong>, subscribing the same, be sent to each of the <strong>United    States</strong>, and that they be desired to have the same put on <strong>Record</strong>.</p>
 
-		<p><img class=imagePreceding
+		<p><img id="JohnHancockImage"
+				class=imagePreceding
 				src="https://cdn.loc.gov/service/pnp/cph/3a30000/3a30000/3a30000/3a30084_150px.jpg"
 				width=244
 				title="John Hancock, an Engraving by J.B. Longacre from a Painting by Copley"
 				alt="Portrait of John Hancock, facing right."
+				style="visibility: hidden; position: relative; z-index:1;"
 			/>
 			By order of Congress,<br />
-			<span class=signer>John Hancock, President</span></p>
+			<span id="JohnHancock"
+				class=signer 
+				onmouseover="jhImageVisibility(this)"
+				onmouseout="jhImageVisibility(this)"
+			>John Hancock, President</span></p>
 		<p class=noFill>
 			<img class=imageStandard
 				src=john_hancock_signature.jpg
@@ -113,11 +156,29 @@
 				title="John Hancock’s Signature"
 				alt="John Hancock’s Signature, from the Original Declaration of Independence"
 		   />
+		    <script>
+				images = $('img')
+				sigImg = images.eq(1);
+				trueCopy = $('<span>')
+					.css('font-family', 'cursive')
+					.css('float', 'left')
+					.text('Attest Chas Thomson secy A True Copy')
+					.insertBefore(sigImg);
+				
+			
+			</script>
 		</p>
 
 		<hr />
-		<p>Baltimore, in Maryland: Printed by Mary Katharine Goddard.</p>
-
+		<p>Baltimore, in Maryland: Printed by Mary Katharine Goddard.
+			<a style="float: right;" href="http://en.wikipedia.org/wiki/File:Goddard_broadside.jpg">Declaration Image</a>
+			<img
+			src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Goddard_broadside.jpg/392px-Goddard_broadside.jpg'
+			title="Declaration Image"
+			alt="1776 Poster of the Declaration of independence"
+			style="width: 10%"
+			/>
+			</p>
 		<svg width="440" height="250">    
 			<g id="USFlag" transform="translate(20, 20)">
 				<!-- Stripe Template, each one 16 pixels high, second Q chosen for equal slope: <path class="Stripe" 
@@ -213,5 +274,6 @@
 				<text class="Stars" x="73" y="30" transform="rotate(304.6153846, 79, 68)">★</text>
 				<text class="Stars" x="73" y="30" transform="rotate(332.3076923, 79, 68)">★</text>
 			</g></svg>
+			
 	</body>
 </html>
